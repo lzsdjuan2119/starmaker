@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | START MAKERS</title>
+    <link rel="stylesheet" href="..START_MAKERS/publico/assets/css/emprende.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">🚀 START <span>MAKERS</span></div>
+            <nav class="main-nav">
+                <a href="#" class="active">Inicio</a>
+                <a href="#">Proyectos</a>
+                <a href="#">Concursos</a>
+            </nav>
+            <div class="user-profile">
+                <div class="user-info">
+                    <span class="user-name">Juan Sedano</span>
+                    <span class="user-role">Ing. de Sistemas</span>
+                </div>
+                <div class="avatar">JS</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>Mis Proyectos</h3>
+                <div class="project-mini-card">
+                    <p>Liderando: <strong>EcoSmart Campus</strong></p>
+                    <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
+                </div>
+                <button class="btn-create-small">+ Crear Proyecto</button>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Notificaciones</h3>
+                <ul class="notif-list">
+                    <li class="notif-item blue">Se te asignó una tarea</li>
+                    <li class="notif-item orange">Nuevo proyecto disponible</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="feed-content">
+            <div class="feed-header">
+                <h2>Proyectos Disponibles</h2>
+                <div class="filters">
+                    <button class="filter-btn active">Todos</button>
+                    <button class="filter-btn">Tecnología</button>
+                    <button class="filter-btn">Finanzas</button>
+                </div>
+            </div>
+
+            <div class="project-grid">
+                <article class="project-card" data-visibility="public">
+                    <div class="card-header">
+                        <span class="visibility-badge public"><i class="fas fa-unlock"></i> Público</span>
+                        <h2 class="project-title">EcoTech Solutions</h2>
+                    </div>
+                    <p class="project-author">Por: Rainer Aurelio • UCH</p>
+                    <p class="project-summary">Sistema de gestión de residuos inteligentes mediante sensores IoT para facultades...</p>
+                    <div class="vacancies">
+                        <span class="vacancy-tag">Marketing</span>
+                        <span class="vacancy-tag">Desarrollador</span>
+                    </div>
+                    <button class="btn-action">Ver Detalles</button>
+                </article>
+
+                <article class="project-card" data-visibility="private">
+                    <div class="card-header">
+                        <span class="visibility-badge private"><i class="fas fa-lock"></i> Protegido</span>
+                        <h2 class="project-title">FinanPro Global</h2>
+                    </div>
+                    <p class="project-author">Por: Gian Carlos • UCH</p>
+                    <p class="project-summary blurred">La descripción detallada está protegida para evitar el plagio de la idea original...</p>
+                    <div class="vacancies">
+                        <span class="vacancy-tag">Finanzas</span>
+                    </div>
+                    <button class="btn-action btn-lock">Solicitar Acceso (NDA)</button>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <div id="ndaModal" class="modal">
+        <div class="modal-content">
+            <i class="fas fa-shield-alt modal-icon"></i>
+            <h3>Protección de Idea</h3>
+            <p>Este proyecto está bajo el protocolo de autoría de <strong>START MAKERS</strong>. Para ver los detalles, debes aceptar el Acuerdo de No Divulgación (NDA).</p>
+            <div class="modal-buttons">
+                <button id="closeModal" class="btn-secondary">Cancelar</button>
+                <button id="acceptNDA" class="btn-primary">Aceptar y Ver</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/emprende.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>START MAKERS | Crear Cuenta</title>
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> //carga la biblioteca de iconos Font Awesome 6.0.0 a través del CDNJS
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            
+            <div class="login-header">
+                <div class="logo-icon">📝</div>
+                <h1>NUEVA CUENTA</h1>
+                <p>Únete a START MAKERS para gestionar tus proyectos</p>
+            </div>
+
+            <form class="login-form" onsubmit="registrar(event)">
+                <div class="input-group">
+                    <i class="fas fa-id-card input-icon"></i>
+                    <input type="text" name="apellidos" placeholder="Apellidos" value="Sedano" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" name="nombres" placeholder="Nombres" value="Juan" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-university input-icon"></i>
+                    <input type="text" name="universidad" placeholder="Universidad" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" name="correo" placeholder="Correo Institucional" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" name="clave" placeholder="Contraseña" required>
+                </div>
+
+                <button type="submit" class="btn-login" style="width: 100%; margin-top: 20px;">
+                    Registrarse ahora
+                </button>
+            </form>
+
+            <div class="login-footer">
+                <p>¿Ya tienes una cuenta? <a href="login.html">Regresar al Inicio de Sesión</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <form class="login-form" onsubmit="registrar(event)">//GEPETO
+        <button type="submit" class="btn-login">Registrarse ahora</button>
+    </form>
+    <script>
+    function registrar(event) {
+        event.preventDefault(); // Detiene el envío automático
+
+        const nombre = document.querySelector('input[name="nombres"]').value;
+        const correo = document.querySelector('input[name="correo"]').value;
+        const clave = document.querySelector('input[name="clave"]').value;
+
+        let usuarios = JSON.parse(localStorage.getItem('usuarios_sm')) || [];
+        usuarios.push({ nombre, correo, clave });
+
+        localStorage.setItem('usuarios_sm', JSON.stringify(usuarios));
+        window.location.href = "login.html";
+    }
+    </script>
+</body>
+</html>
